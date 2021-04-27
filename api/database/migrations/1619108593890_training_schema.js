@@ -8,8 +8,8 @@ class TrainingSchema extends Schema {
     this.create('trainings', (table) => {
       table.increments()
       table.integer('client_id').unsigned().references('id').inTable('clients').notNullable()
-      table.stribng('name', 50).notNullable()
-      table.stribng('observation', 200)
+      table.string('name', 50).notNullable()
+      table.string('observation', 200)
       table.timestamps()
     })
   }

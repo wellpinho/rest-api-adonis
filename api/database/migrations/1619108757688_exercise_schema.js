@@ -8,7 +8,7 @@ class ExerciseSchema extends Schema {
     this.create('exercises', (table) => {
       table.increments()
       table.string('name', 50).notNullable()
-      table.string('name', 200)
+      table.string('observation', 200)
       table.integer('series')
       table.integer('waiting_time')
       table.string('url_image', 50)
