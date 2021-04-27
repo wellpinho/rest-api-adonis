@@ -1,4 +1,4 @@
-# resta-api-adonis
+# rest-api-adonis
 Creating a full crud REST API using adonis.js framework
 
 ## Description:
