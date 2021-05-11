@@ -7,7 +7,10 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.resource('users', 'UserController').apiOnly()
+Route.resource('users', 'UserController').apiOnly().validator(new Map([
+  [['users.store'], ['User']], [['users.update'], ['User']]
+]))
+
 Route.resource('clients', 'ClientController').apiOnly()
 Route.resource('exercises', 'ExerciseController').apiOnly()
 Route.resource('trainings', 'TrainingController').apiOnly()
