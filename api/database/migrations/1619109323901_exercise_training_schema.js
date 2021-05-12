@@ -3,19 +3,19 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class ExerciceTrainingSchema extends Schema {
+class ExerciseTrainingSchema extends Schema {
   up() {
-    this.create('exercice_training', (table) => {
+    this.create('exercise_training', (table) => {
       table.increments()
-      table.integer('execise_id').unsigned().references('id').inTable('exercises').notNullable()
+      table.integer('exercise_id').unsigned().references('id').inTable('exercises').notNullable()
       table.integer('training_id').unsigned().references('id').inTable('trainings').notNullable()
       table.timestamps()
     })
   }
 
   down() {
-    this.drop('exercice_training')
+    this.drop('exercise_training')
   }
 }
 
-module.exports = ExerciceTrainingSchema
+module.exports = ExerciseTrainingSchema
