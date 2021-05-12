@@ -16,6 +16,6 @@ Creating a full crud REST API using adonis.js framework
 For create a new migration: ``` adonis make:migration type nameYourTable```
 after select create table
 
-## Network with me on Linkedin:
+## Connect with me on Linkedin:
 [Linkedin](https://www.linkedin.com/in/wellpinho/)
 [Email](wellpinho@outlook.com)
