@@ -31,7 +31,7 @@ class TrainingController {
   }
 
   async update ({ params, request }) {
-    const data = request.only([
+    const { exercises, ...data } = request.only([
       'cliente_id',
       'name',
       'observation'
@@ -40,7 +40,13 @@ class TrainingController {
     const training = await Training.findOrFail(params.id)
 
     training.merge(data)
-    await Training.save(training)
+    await training.save()
+
+    if (exercises) {
+      await training.exercises().sync(exercises)
+    }
+
+    await training.load('exercises')
 
     return training
   }
